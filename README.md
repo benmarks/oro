@@ -1,3 +1,4 @@
+*Note: canonical source is at [http://www.orocrm.com/download](http://www.orocrm.com/download)*
 Oro Platform Empty Application
 ==============================
 An example of empty application built using the Oro Platform.
