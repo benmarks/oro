@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             //new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            //new JMS\JobQueueBundle\JMSJobQueueBundle(),
+            new JMS\JobQueueBundle\JMSJobQueueBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\RestBundle\FOSRestBundle(),
@@ -33,10 +33,13 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
             new Bazinga\ExposeTranslationBundle\BazingaExposeTranslationBundle(),
             new APY\JsFormValidationBundle\APYJsFormValidationBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new A2lix\TranslationFormBundle\A2lixTranslationFormBundle(),
 
             // BAP bundles
             new Oro\Bundle\FlexibleEntityBundle\OroFlexibleEntityBundle(),
             new Oro\Bundle\UIBundle\OroUIBundle(),
+            new Oro\Bundle\FormBundle\OroFormBundle(),
             new Oro\Bundle\JsFormValidationBundle\OroJsFormValidationBundle(),
             new Oro\Bundle\SoapBundle\OroSoapBundle(),
             new Oro\Bundle\SearchBundle\OroSearchBundle(),
@@ -51,17 +54,31 @@ class AppKernel extends Kernel
             new Oro\Bundle\WindowsBundle\OroWindowsBundle(),
             new Oro\Bundle\AddressBundle\OroAddressBundle(),
             new Oro\Bundle\DataAuditBundle\OroDataAuditBundle(),
+            new Oro\Bundle\TagBundle\OroTagBundle(),
+            new Oro\Bundle\AsseticBundle\OroAsseticBundle(),
+            new Oro\Bundle\TranslationBundle\OroTranslationBundle(),
+            new Oro\Bundle\OrganizationBundle\OroOrganizationBundle(),
+            new Oro\Bundle\NotificationBundle\OroNotificationBundle($this),
+            new Oro\Bundle\EmailBundle\OroEmailBundle(),
+            new Oro\Bundle\EntityBundle\OroEntityBundle(),
+            new Oro\Bundle\EntityConfigBundle\OroEntityConfigBundle(),
+            new Oro\Bundle\EntityExtendBundle\OroEntityExtendBundle(),
+            new Oro\Bundle\ImapBundle\OroImapBundle(),
+
+            // CRM bundles
+            new OroCRM\Bundle\AccountBundle\OroCRMAccountBundle(),
+            new OroCRM\Bundle\ContactBundle\OroCRMContactBundle(),
+            new OroCRM\Bundle\DashboardBundle\OroCRMDashboardBundle()
         );
 
-        if (in_array($this->getEnvironment(), array('dev', 'devjs', 'test'))) {
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
         }
 
-        if (in_array($this->getEnvironment(), array('test', 'perf'))) {
+        if (in_array($this->getEnvironment(), array('test'))) {
             $bundles[] = new Oro\Bundle\TestFrameworkBundle\OroTestFrameworkBundle();
-            $bundles[] = new Acme\Bundle\TestsBundle\AcmeTestsBundle();
         }
 
         return $bundles;
