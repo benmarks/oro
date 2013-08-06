@@ -1,40 +1,30 @@
-OroCRM Application
-========================
+*Note: canonical source is at [http://www.orocrm.com/download](http://www.orocrm.com/download)*
+Oro Platform Empty Application
+==============================
+An example of empty application built using the Oro Platform.
 
-Welcome to OroCRM an Open Source Client Relationship Management (CRM) tool.
+This repository contains application configuration settings and depends on Oro Platform.
 
-This document contains information on how to download, install, and start
-using OroCRM. For a more detailed explanation, see the [Installation]
-chapter.
+Important Note: this application is not production ready and is intendant for evaluation and development only!
 
-Important Note: this application is not production ready and is intended for evaluation and development only!
-
-Requirements
+Installation
 ------------
-
-OroCRM requires Symfony 2, Doctrine 2 and PHP 5.3.3 or above.
-
-Installation instructions:
--------------------------
-
 
 ### Using Composer
 
-[As both Symfony 2 and OroCRM use [Composer][2] to manage their dependencies, this is the recommended way to install OroCRM.]
+[As both Symfony 2 and OroCRM use [Composer][1] to manage their dependencies, this is the recommended way to install OroCRM.]
 
 If you don't have Composer yet, download it following the instructions on
 http://getcomposer.org/ or just run the following command:
 
     curl -s https://getcomposer.org/installer | php
 
-- Clone http://github.com/orocrm/crm-application.git OroCRM project with
+- Clone http://gitlab.orocrm.com/platform-application.git Platform Application project with
 
-    git clone http://github.com/orocrm/crm-application.git
+    git clone http://gitlab.orocrm.com/platform-application.git
 
-- Go to app/config folder and create parameters.yml using parameters.yml.dist as example. Update database name and credentials.
-  Alternatively parameters.yml can be created automatically on the next step when run composer install command,
-  you will be able to customize all the values interactively.
-- Install OroCRM dependencies with composer. If installation process seems too slow you can use "--prefer-dist" option.
+- Go to app/config folder and create parameters.yml using parameters.dist.yml as example. Update database name and credentials
+- Install Platform Application dependencies with composer. If installation process seems too slow you can use "--prefer-dist" option.
 
     php composer.phar install
 
@@ -42,22 +32,4 @@ http://getcomposer.org/ or just run the following command:
 
 After installation you can login as application administrator using user name "admin" and password "admin".
 
-Checking your System Configuration
--------------------------------------
-
-Before starting to code, make sure that your local system is properly
-configured for a Symfony application.
-
-Execute the `check.php` script from the command line:
-
-    php app/check.php
-
-Access the `config.php` script from a browser:
-
-    http://your_domain/path/to/symfony/app/web/config.php
-
-If you get any warnings or recommendations, fix them before moving on.
-
-
-[1]:  http://symfony.com/doc/2.1/book/installation.html
-[2]:  http://getcomposer.org/
+[1]:  http://getcomposer.org/

@@ -1,4 +1,5 @@
 {% extends "OroUIBundle:Default:index.html.twig" %}
+{% use ':Default:components.html.twig' %}
 
 {% block head_script %}
     {{ parent() }}
@@ -10,7 +11,3 @@
     {{ block('head_style_component') }}
 {% endblock %}
 
-{% block main %}
-    {{ parent() }}
-    {{ oro_windows_restore() }}
-{% endblock %}

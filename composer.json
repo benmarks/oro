@@ -1,22 +1,25 @@
 {
-    "name": "oro/crm-application",
-    "description": "The OroCRM distribution",
-    "homepage": "https://github.com/orocrm/crm-application.git",
-    "license": "The Open Software License version 3.0",
+    "name": "oro/platform-application",
+    "description": "Oro Platform Empty Application",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
     "require": {
         "php": ">=5.3.3",
-        "oro/platform": "1.0.*@dev",
-        "oro/crm": "1.0.*@dev"
+        "oro/platform": "dev-master"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/orocrm/SonataAdminBundle.git"
+            "url": "http://gitlab.orocrm.com/platform.git"
+        },
+        {
+            "type": "vcs",
+            "url": "http://gitlab.orocrm.com/vendors/sonataadminbundle.git"
         }
     ],
     "scripts": {
         "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -24,7 +27,6 @@
             "php app/console fos:js-routing:dump --target=web/js/routes.js"
         ],
         "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -35,10 +37,6 @@
     "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
-        "symfony-web-dir": "web",
-        "symfony-assets-install": "symlink",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        }
+        "symfony-web-dir": "web"
     }
 }
